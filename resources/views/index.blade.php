@@ -1,26 +1,33 @@
-<x-frame>
+@extends('layouts.template')
+@section('layout_content')
 
-    <x-slot:layout_pagetitle>
-        {{ $pagetitle }} 
-    </x-slot:layout_pagetitle>
-
-    <x-slot:layout_maintitle>
-        {{ $maintitle }} 
-    </x-slot:layout_maintitle>
-
-    <x-slot:layout_tagline>
-        Welcome to SomeEggs Library
-    </x-slot:layout_tagline>
-    <h3>Welcome</h3>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
-
-    <h3>Hello</h3>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
-
-    <x-mybutton>Contact Us</x-mybutton>
-
-</x-frame>
+<table class="table">
+    <thead>
+      <tr class = "table-dark">
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+@endsection

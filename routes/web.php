@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index', [
         "pagetitle" => "Home", 
-        "maintitle" => "My Library"
+        "maintitle" => "Welcome to SomeEggs Library"
     ]);
 });
 
@@ -29,4 +29,9 @@ Route::view('/tentangkita', 'about',[
 Route::view('/kontakkita', 'contact',[
     "pagetitle" => "Contact", 
     "maintitle" => "Contact Data"
+]);
+
+Route::view('/posttest', 'post',[
+    "pagetitle" => "About Us", 
+    "maintitle" => "About SomeEggs Library"
 ]);

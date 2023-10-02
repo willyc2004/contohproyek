@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index', [
         "pagetitle" => "Home", 
-        "maintitle" => "Welcome to SomeEggs Library"
+        "maintitle" => "My Library"
     ]);
 });
 

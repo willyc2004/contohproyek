@@ -31,7 +31,7 @@ Route::view('/kontakkita', 'contact',[
     "maintitle" => "Contact Data"
 ]);
 
-Route::view('/posttest', 'post',[
-    "pagetitle" => "About Us", 
-    "maintitle" => "About SomeEggs Library"
+Route::view('/AFL1', 'menu',[
+    "pagetitle" => "AFL1", 
+    "maintitle" => "Menu"
 ]);

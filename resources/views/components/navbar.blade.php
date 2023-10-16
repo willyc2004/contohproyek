@@ -17,8 +17,11 @@
                     <a class="nav-link {{ ($pagetitle == "Contact")? "active" : ""  }}" href="/kontakkita">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($pagetitle == "AFL1")? "active" : ""  }}" href="/AFL1">AFL1</a>
+                    <a class="nav-link {{ ($pagetitle == "AFL1")? "active" : ""  }}" href="/menu">AFL1</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ ($pagetitle == "My Project")? "active" : ""  }}" href="/project">Project</a>
+                </li>   
             </ul>
         </div>
     </div>

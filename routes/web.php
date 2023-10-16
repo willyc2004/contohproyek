@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,23 +16,49 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index', [
-        "pagetitle" => "Home", 
+        "pagetitle" => "Home",
         "maintitle" => "Welcome to SomeEggs Library"
     ]);
 });
 
+// Route::get('/project', function () {
+//     return view('project', [
+//         'pagetitle' => 'My Project',
+//         'maintitle' => 'My Projects',
+//         'projects' => Project::allData()
+//     ]);  
+// });
 
-Route::view('/tentangkita', 'about',[
-    "pagetitle" => "About Us", 
+Route::get('/project/{code}', [ProjectController::class, 'show']);
+
+Route::get('/project', [ProjectController::class, 'project']);
+
+Route::get('/menu', [ProjectController::class, 'menu']);
+
+
+// Route::get('/menu', function () {
+//     return view('menu', [
+//         "pagetitle" => "AFL1",
+//         "maintitle" => "Menu",
+//         'menus' => Menu::allData()
+//     ]);
+// });
+
+// Route::get('/project/{code}', function ($code) {
+//     return view('showproject', [
+//         'pagetitle' => 'Detail Project',
+//         'maintitle' => 'Detail Project',
+//         'pro' => Project::dataWithCode($code)
+//     ]);
+// });
+
+
+Route::view('/tentangkita', 'about', [
+    "pagetitle" => "About Us",
     "maintitle" => "About SomeEggs Library"
 ]);
 
-Route::view('/kontakkita', 'contact',[
-    "pagetitle" => "Contact", 
+Route::view('/kontakkita', 'contact', [
+    "pagetitle" => "Contact",
     "maintitle" => "Contact Data"
-]);
-
-Route::view('/AFL1', 'menu',[
-    "pagetitle" => "AFL1", 
-    "maintitle" => "Menu"
 ]);

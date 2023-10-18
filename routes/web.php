@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProjectController;
+use App\Models\Writer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,13 +22,13 @@ Route::get('/', function () {
     ]);
 });
 
-// Route::get('/project', function () {
-//     return view('project', [
-//         'pagetitle' => 'My Project',
-//         'maintitle' => 'My Projects',
-//         'projects' => Project::allData()
-//     ]);  
-// });
+Route::get('/writer', function () {
+    return view('writer', [
+        'pagetitle' => 'Home',
+        'maintitle' => 'Writters in My Library',
+        'writers' => Writer::index()
+    ]);  
+});
 
 Route::get('/project/{code}', [ProjectController::class, 'show']);
 

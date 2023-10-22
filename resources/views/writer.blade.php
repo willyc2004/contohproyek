@@ -39,7 +39,7 @@
             @foreach ($writers as $wr)
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $wr['name'] }}</td>
+                    <td><a href="/writer/{{ $wr['id'] }}">{{ $wr['name'] }}</a></td>
                     <td>{{ $country[$i] }}</td>
                     <td>
                         @if ($loop->first)
@@ -58,7 +58,7 @@
                         {{ $wr['contact'] }}
                     </td>
                     <td>
-                        <img src="{{ asset('images/'.$wr['image_name']) }}" class="mx-auto d-block rounded-3 object-fit-cover" width="200" height="130">
+                        <img src="{{ asset('images/'.$wr['image_name']) }}" class="rounded-3 object-fit-cover" width="200" height="180">
                     </td>
                 </tr>
                 @php

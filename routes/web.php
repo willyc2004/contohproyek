@@ -36,6 +36,8 @@ Route::get('/project', [ProjectController::class, 'project']);
 Route::get('/menu', [ProjectController::class, 'menu']);
 
 
+
+
 // Route::get('/menu', function () {
 //     return view('menu', [
 //         "pagetitle" => "AFL1",
@@ -51,6 +53,11 @@ Route::get('/menu', [ProjectController::class, 'menu']);
 //         'pro' => Project::dataWithCode($code)
 //     ]);
 // });
+
+Route::view('/blog', 'blog', [
+    "pagetitle" => "About Us",
+    "maintitle" => "About SomeEggs Library"
+]);
 
 
 Route::view('/tentangkita', 'about', [

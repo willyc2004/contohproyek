@@ -52,7 +52,7 @@
                             Urutan Genap
                         @elseif ($loop->odd)
                             Urutan Ganjil
-                        @endif 
+                        @endif
                     </td>
                     <td>
                         {{ $wr['contact'] }}

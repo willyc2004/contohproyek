@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Book extends Model
 {
@@ -12,7 +13,12 @@ class Book extends Model
     protected $fillable = [
         'title',
         'synopsis',
-        'writer_name',
-        'publisher'
+        'coverphoto',
+        'writer_id'
     ];
+
+    public function writer() : BelongsTo
+    {
+        return $this->belongsTo(Writer::class);
+    }
 }

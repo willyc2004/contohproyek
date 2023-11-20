@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Route::get('/writer', [WriterController::class, 'writer']);
 
-Route::get('/writer/{id}', [WriterController::class, 'showWriter']);
+Route::get('/writer/{writer}', [WriterController::class, 'showWriter']);
 
 
 Route::get('/project/{code}', [ProjectController::class, 'show']);

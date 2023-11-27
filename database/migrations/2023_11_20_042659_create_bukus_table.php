@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->string('synopsis ');
+            $table->string('synopsis');
             $table->string('writer_name');
             $table->unsignedBigInteger('publisher_id');
             $table->foreign('publisher_id')

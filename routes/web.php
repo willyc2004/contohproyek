@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WriterController;
 use App\Models\Writer;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +36,11 @@ Route::get('/project/{code}', [ProjectController::class, 'show']);
 Route::get('/project', [ProjectController::class, 'project']);
 
 Route::get('/menu', [ProjectController::class, 'menu']);
+
+
+Route::get('/shop', [ShopController::class, 'index']);
+
+Route::get('/sales', [SalesController::class, 'index']);
 
 
 

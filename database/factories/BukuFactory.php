@@ -17,7 +17,10 @@ class BukuFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->sentence,
+            'synopsis' => fake()->paragraph,
+            'writer_name' => fake()->name,
+            'publisher_id' => mt_rand(1,3),
         ];
     }
 }

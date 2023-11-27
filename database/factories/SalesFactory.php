@@ -17,7 +17,10 @@ class SalesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-        ];
+            'shop_id' => mt_rand(1,15),
+            'buku_id' => mt_rand(1,15),
+            'user_id' => mt_rand(1,3),
+            'book_amount' => fake()->numberBetween(1,100)
+            ];
     }
 }

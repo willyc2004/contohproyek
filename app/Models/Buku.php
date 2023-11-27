@@ -23,6 +23,6 @@ class Buku extends Model
     }
 
     public function sold(): HasMany {
-        return $this->hasMany(Sales::class, 'book_id', 'id');
+        return $this->hasMany(Sales::class, 'buku_id', 'id');
     }
 }

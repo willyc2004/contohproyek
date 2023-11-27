@@ -12,13 +12,13 @@ class Sales extends Model
 
     protected $fillable = [
         'shop_id',
-        'book_id',
+        'buku_id',
         'user_id',
         'book_amount',
     ];
 
     public function sold(): BelongsTo{
-        return $this->belongsTo(Book::class, 'book_id', 'id');
+        return $this->belongsTo(Buku::class, 'buku_id', 'id');
     }
 
     public function seller(): BelongsTo{

@@ -1,15 +1,19 @@
 @extends('layouts.template')
 
-@section('layout_tagline' , 'Welcome to SomeEggs Library')
+@section('layout_tagline', 'Home')
 @section('layout_content')
-
-    <h3>Welcome</h3>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
-
-    <h3>Welcome</h3>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
-    <p>This application is to manage my mini library</p>
+        <table>
+            <tr>
+                <td>Phone</td>
+                <td>089472184421</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>Willy.cahyadi25@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>Main Street 47, Jakarta</td>
+            </tr>
+        </table>
 @endsection

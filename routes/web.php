@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\SalesController;
-use App\Http\Controllers\ShopController;
+use App\Http\Controllers\Admin\SalesController;
+use App\Http\Controllers\Admin\ShopController;
+use App\Http\Controllers\Editor\ShopController as EditorShopController;
 use App\Http\Controllers\WriterController;
 use App\Models\Writer;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/writer', [WriterController::class, 'writer']);
+
 
 Route::get('/writer/{writer}', [WriterController::class, 'showWriter']);
 
@@ -38,10 +39,27 @@ Route::get('/project', [ProjectController::class, 'project']);
 
 Route::get('/menu', [ProjectController::class, 'menu']);
 
+Route::group([
+    'middleware' => 'admin',
+    'prefix' => 'admin',
+    'as' => 'admin.'
+], function () {
+    Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 
-Route::get('/shop', [ShopController::class, 'index']);
+    Route::get('/sales', [SalesController::class, 'index'])->name('sales');
+});
 
-Route::get('/sales', [SalesController::class, 'index']);
+Route::group([
+    'middleware' => 'editor',
+    'prefix' => 'editor',
+    'as' => 'editor.'
+], function () {
+    Route::get('/shop', [EditorShopController::class, 'index'])->name('shop');
+});
+
+Route::get('/writer', [WriterController::class, 'writer'])->middleware('auth')->name('writer');
+
+
 
 
 

@@ -17,11 +17,12 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call([
+            RoleSeeder::class,
             UserSeeder::class,
             PublisherSeeder::class,
             BukuSeeder::class,
             ShopSeeder::class,
-            SalesSeeder::class,
+            SalesSeeder::class
         ]);
 
         Model::reguard();

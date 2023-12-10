@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'its_login',
+        'its_active'
     ];
 
     /**
@@ -44,7 +46,32 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function buyer(): HasMany{
+    public function buyer(): HasMany
+    {
         return $this->hasMany(Sales::class, 'user_id', 'id');
+    }
+
+    public function isAdmin(): bool
+    {
+        if ($this->role_id == 1) {
+            return true;
+        }
+        return false;
+    }
+
+    public function isEditor(): bool
+    {
+        if ($this->role_id == 2) {
+            return true;
+        }
+        return false;
+    }
+
+    public function isMember(): bool
+    {
+        if ($this->role_id == 3) {
+            return true;
+        }
+        return false;
     }
 }

@@ -16,4 +16,5 @@
                 <td>Main Street 47, Jakarta</td>
             </tr>
         </table>
+        <livewire:counter />
 @endsection

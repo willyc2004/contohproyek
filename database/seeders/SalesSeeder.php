@@ -15,5 +15,4 @@ class SalesSeeder extends Seeder
     {
         Sales::factory(20)->create();
     }
-
 }

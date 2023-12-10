@@ -1,6 +1,11 @@
 @extends('layouts.template')
 
 @section('layout_content')
+    <form action="/shop" Imethod="GET" class="form-inline w-25 d-flex gap-2">
+        <input class="form-control" type="search" name="search" placeholder="Search">
+        <button type="submit" class="btn btn-outline-success">Search</button>
+    </form>
+    <hr>
     <table class="table">
         <thead>
             <tr class="table-dark">
@@ -13,13 +18,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($sales as $sale)
+            @foreach ($shops as $shop)
                 <tr>
-                    <td>{{ $sale->id }}</td>
-                    <td>{{ $sale->shop_name }}</td>
-                    <td>{{ $sale->shop_address }}</td>
-                    <td>{{ $sale->created_at }}</td>
-                    <td>{{ $sale->updated_at }}</td>
+                    <td>{{ $shop->id }}</td>
+                    <td>{{ $shop->shop_name }}</td>
+                    <td>{{ $shop->shop_address }}</td>
+                    <td>{{ $shop->created_at }}</td>
+                    <td>{{ $shop->updated_at }}</td>
                     <td>
                         <button class='btn btn-danger' id='delete' name='delete'>Delete</button>
                     </td>
@@ -28,4 +33,8 @@
 
         </tbody>
     </table>
+    <br>
+    <div>
+        {{ $shops->links() }}
+    </div>
 @endsection

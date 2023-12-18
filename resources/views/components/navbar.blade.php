@@ -45,7 +45,7 @@
                                 style="color: #fff; font-size: 18px; font-weight: bold;">Sales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $pagetitle == 'Shop' ? 'active' : '' }}" href="{{ route('admin.shop') }}"
+                            <a class="nav-link {{ $pagetitle == 'Shop' ? 'active' : '' }}" href="{{ route('admin.shop.index') }}"
                                 style="color: #fff; font-size: 18px; font-weight: bold;">Shop</a>
                         </li>
                     @endif

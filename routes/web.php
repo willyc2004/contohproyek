@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Admin\SalesController;
 use App\Http\Controllers\Admin\ShopController;
@@ -38,16 +39,30 @@ Route::get('/project/{code}', [ProjectController::class, 'show']);
 Route::get('/project', [ProjectController::class, 'project']);
 
 Route::get('/menu', [ProjectController::class, 'menu']);
+// Route::get('/shop/create', [ShopController::class, 'create'])->middleware('auth')->name('shop.create');
+// Route::post('/shop/store', [ShopController::class, 'store'])->middleware('auth')->name('shop.store');
+// Route::get('/shop/edit/{shop}', [ShopController::class, 'edit'])->middleware('auth')->name('shop.edit');
+// Route::put('/shop/update/{shop}', [ShopController::class, 'update'])->middleware('auth')->name('shop.update');
+// Route::delete('/shop/destroy/{shop}', [ShopController::class, 'destroy'])->middleware('auth')->name('shop.destroy');
 
 Route::group([
     'middleware' => 'admin',
     'prefix' => 'admin',
     'as' => 'admin.'
 ], function () {
-    Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+    // Shop CRUD routes
+    Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
+    Route::get('/shop/create', [ShopController::class, 'create'])->name('shop.create');
+    Route::post('/shop/store', [ShopController::class, 'store'])->name('shop.store');
+    Route::get('/shop/edit/{shop}', [ShopController::class, 'edit'])->name('shop.edit');
+    Route::put('/shop/update/{shop}', [ShopController::class, 'update'])->name('shop.update');
+    Route::delete('/shop/destroy/{shop}', [ShopController::class, 'destroy'])->name('shop.destroy');
+    Route::get('/shop/show/{shop}', [ShopController::class, 'show'])->name('shop.show');
 
+    // Other admin routes
     Route::get('/sales', [SalesController::class, 'index'])->name('sales');
 });
+
 
 Route::group([
     'middleware' => 'editor',
@@ -98,4 +113,4 @@ Route::view('/kontakkita', 'contact', [
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

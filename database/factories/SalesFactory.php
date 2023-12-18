@@ -19,7 +19,7 @@ class SalesFactory extends Factory
         return [
             'shop_id' => mt_rand(1,15),
             'buku_id' => mt_rand(1,15),
-            'user_id' => 1,
+            'user_id' => mt_rand(1,15),
             'book_amount' => fake()->numberBetween(1,100)
             ];
     }

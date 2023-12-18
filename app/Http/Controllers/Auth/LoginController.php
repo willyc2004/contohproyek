@@ -46,27 +46,27 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password,
             'role_id' => 1,
-            'its_active' => '1'
+            'its_active' => '0'
         ];
 
         $editor = [
             'email' => $request->email,
             'password' => $request->password,
             'role_id' => 2,
-            'its_active' => '1'
+            'its_active' => '0'
         ];
 
         $member = [
             'email' => $request->email,
             'password' => $request->password,
             'role_id' => 3,
-            'its_active' => '1'
+            'its_active' => '0'
         ];
 
 
         if(Auth::attempt($admin)){
             $this->isLogin(Auth::id());
-            return redirect()->route('admin.shop');
+            return redirect()->route('admin.shop.index');
             }
         else if(Auth:: attempt($editor)) {
             $this->isLogin(Auth::id());
